@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>catalogo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo | Freaky Store</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=playing_cards" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,47 +13,270 @@
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
   <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-  <header class="container">
+
+  <header class="container navbar-dark">
     <div class="row align-items-center mt-2">
-      <div class="col-lg-3">
+      <div class="col-lg-3 col-12 d-flex justify-content-between align-items-center">
         <a class="d-flex align-items-center text-decoration-none gap-1 fs-2" href="../index.html">
           <span class="material-symbols-outlined text-white text-3xl">playing_cards</span>
-          <span class="text-2xl font-semibold text-white"> Freaky Store</span>
-
+          <span class="text-2xl font-semibold text-white">Freaky Store</span>
         </a>
-      </div>
-      <div class="col-lg-9">
-        <nav class="d-flex justify-content-center fs-5">
-          <ul class="d-flex gap-4 list-unstyled m-auto">
 
-            <li class="">
-              <a class="text-decoration-none text-secondary" href="./ubicacion.html">Ubicacion</a>
+        <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="col-lg-9 col-12">
+        <nav class="collapse navbar-collapse d-lg-flex justify-content-center fs-5" id="menuNav">
+          <ul class="d-flex flex-column flex-lg-row gap-3 list-unstyled m-auto text-center text-lg-start">
+
+            <li>
+              <a class="text-decoration-none text-secondary" href="./ubicacion.html">Ubicación</a>
             </li>
             <li>
               <a class="text-decoration-none text-secondary" href="./carrito_compra.html">Carrito de compra</a>
             </li>
             <li>
-              <a class="text-decoration-none text-secondary" href="./quienes_somos.html">¿Quienes somos?</a>
+              <a class="text-decoration-none text-secondary" href="./quienes_somos.html">¿Quiénes somos?</a>
             </li>
             <li>
               <a class="text-decoration-none text-secondary" href="./contacto.html">Contacto</a>
             </li>
-
           </ul>
         </nav>
       </div>
     </div>
-
-
-
   </header>
 
-  <footer>
+  <main class="container py-4">
+    <div class="text-center mb-4">
+      <h1 class="mb-2">Catálogo</h1>
+      <p class="text-secondary mb-0">Explora nuestras cartas, mazos y accesorios. Todo listo para tu próxima partida.
+      </p>
+    </div>
+
+
+    <div class="row g-3" id="catalogo">
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/mtg1/640/480"
+            alt="Booster MTG Set Draft">
+          <div class="card-body text-center">
+            <h5 class="product-title">Booster MTG: Set Draft</h5>
+            <p class="product-desc">Sobre de 15 cartas para draft. Edición reciente.</p>
+            <div class="product-tags">
+              <span class="product-tag">#MTG</span><span class="product-tag">#Draft</span>
+            </div>
+            <div class="product-price">$14.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/pkm1/640/480"
+            alt="Elite Trainer Box Pokémon">
+          <div class="card-body text-center">
+            <h5 class="product-title">Elite Trainer Box Pokémon</h5>
+            <p class="product-desc">Caja con sobres, fundas y accesorios.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Pokémon</span><span class="product-tag">#ETB</span>
+            </div>
+            <div class="product-price">$34.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/sleeves/640/480"
+            alt="Fundas Standard x100">
+          <div class="card-body text-center">
+            <h5 class="product-title">Fundas Standard (x100)</h5>
+            <p class="product-desc">Protectores libres de ácido, ajuste perfecto.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Accesorios</span><span class="product-tag">#Fundas</span>
+            </div>
+            <div class="product-price">$6.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/mtg2/640/480" alt="Commander Deck">
+          <div class="card-body text-center">
+            <h5 class="product-title">Commander Deck</h5>
+            <p class="product-desc">Mazo preconstruido listo para jugar.</p>
+            <div class="product-tags">
+              <span class="product-tag">#MTG</span><span class="product-tag">#Commander</span>
+            </div>
+            <div class="product-price">$29.990</div>
+            <span class="badge bg-secondary mb-2">Agotado</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/playmat/640/480"
+            alt="Playmat Antideslizante">
+          <div class="card-body text-center">
+            <h5 class="product-title">Playmat Antideslizante</h5>
+            <p class="product-desc">Superficie suave, base de goma.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Accesorios</span><span class="product-tag">#Playmat</span>
+            </div>
+            <div class="product-price">$19.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/pkm2/640/480"
+            alt="Sobre Pokémon 10 cartas">
+          <div class="card-body text-center">
+            <h5 class="product-title">Sobre Pokémon (10 cartas)</h5>
+            <p class="product-desc">Colecciona y juega con tus favoritos.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Pokémon</span><span class="product-tag">#Booster</span>
+            </div>
+            <div class="product-price">$8.990</div>
+            <span class="badge bg-secondary mb-2">Agotado</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/binder/640/480"
+            alt="Carpeta Portacartas">
+          <div class="card-body text-center">
+            <h5 class="product-title">Carpeta Portacartas 9-Pocket</h5>
+            <p class="product-desc">Organiza y protege tu colección.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Accesorios</span><span class="product-tag">#Binder</span>
+            </div>
+            <div class="product-price">$17.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/deckbox/640/480"
+            alt="Deck Box Magnética">
+          <div class="card-body text-center">
+            <h5 class="product-title">Deck Box Magnética</h5>
+            <p class="product-desc">Estuche rígido con cierre magnético.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Accesorios</span><span class="product-tag">#DeckBox</span>
+            </div>
+            <div class="product-price">$12.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/dices/640/480" alt="Set de Dados">
+          <div class="card-body text-center">
+            <h5 class="product-title">Set de Dados Acrílicos</h5>
+            <p class="product-desc">Pack de 7 dados poliédricos.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Accesorios</span><span class="product-tag">#Dados</span>
+            </div>
+            <div class="product-price">$9.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/toploader/640/480" alt="Top Loaders">
+          <div class="card-body text-center">
+            <h5 class="product-title">Top Loaders (x25)</h5>
+            <p class="product-desc">Rígidos para cartas valiosas.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Accesorios</span><span class="product-tag">#Protección</span>
+            </div>
+            <div class="product-price">$7.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/matte/640/480" alt="Fundas Mate">
+          <div class="card-body text-center">
+            <h5 class="product-title">Fundas Mate (x100)</h5>
+            <p class="product-desc">Acabado anti-reflejo, mezcla colores.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Fundas</span><span class="product-tag">#Mate</span>
+            </div>
+            <div class="product-price">$8.490</div>
+            <span class="badge bg-secondary mb-2">Agotado</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card product-card w-100">
+          <img class="card-img-top product-img" src="https://picsum.photos/seed/box/640/480" alt="Bundle Coleccionista">
+          <div class="card-body text-center">
+            <h5 class="product-title">Bundle Coleccionista</h5>
+            <p class="product-desc">Set mixto de sobres y accesorios.</p>
+            <div class="product-tags">
+              <span class="product-tag">#Bundle</span><span class="product-tag">#Colección</span>
+            </div>
+            <div class="product-price">$39.990</div>
+            <span class="badge bg-success mb-2">Stock disponible</span>
+            <button class="btn btn-add w-100" disabled>Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="mt-4" aria-label="Catálogo">
+      <ul class="pagination justify-content-center mb-0">
+        <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+        <li class="page-item active"><span class="page-link">1</span></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="container">
     <p>© 2025 Freaky Store. Todos los derechos reservados.</p>
   </footer>
 </body>
+
 </html>

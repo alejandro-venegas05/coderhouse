@@ -17,79 +17,87 @@
 </head>
 <body>
 
-  <header class="container">
+  <header class="container navbar-dark">
     <div class="row align-items-center mt-2">
-      <div class="col-lg-3">
-        <a  class="d-flex align-items-center text-decoration-none gap-1 fs-2" href="./index.html">
+      <div class="col-lg-3 col-12 d-flex justify-content-between align-items-center">
+        <a class="d-flex align-items-center text-decoration-none gap-1 fs-2" href="./index.html">
           <span class="material-symbols-outlined text-white text-3xl">playing_cards</span>
-          <span class="text-2xl font-semibold text-white"> Freaky Store</span>
-
+          <span class="text-2xl font-semibold text-white">Freaky Store</span>
         </a>
+
+        <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
-      <div class="col-lg-9">
-        <nav class="d-flex justify-content-center fs-5">
-          <ul class="d-flex gap-4 list-unstyled m-auto">
-            <li class="">
-              <a class="text-decoration-none text-secondary" href="./pages/catalogo.html">Catalogo</a>
+
+      <div class="col-lg-9 col-12">
+        <nav class="collapse navbar-collapse d-lg-flex justify-content-center fs-5" id="menuNav">
+          <ul class="d-flex flex-column flex-lg-row gap-3 list-unstyled m-auto text-center text-lg-start">
+            <li>
+              <a class="text-decoration-none text-secondary" href="./pages/catalogo.html">Catálogo</a>
             </li>
-            <li class="">
-              <a class="text-decoration-none text-secondary" href="./pages/ubicacion.html">Ubicacion</a>
+            <li>
+              <a class="text-decoration-none text-secondary" href="./pages/ubicacion.html">Ubicación</a>
             </li>
             <li>
               <a class="text-decoration-none text-secondary" href="./pages/carrito_compra.html">Carrito de compra</a>
             </li>
             <li>
-              <a class="text-decoration-none text-secondary" href="./pages/quienes_somos.html">¿Quienes somos?</a>
+              <a class="text-decoration-none text-secondary" href="./pages/quienes_somos.html">¿Quiénes somos?</a>
             </li>
             <li>
               <a class="text-decoration-none text-secondary" href="./pages/contacto.html">Contacto</a>
             </li>
-
           </ul>
         </nav>
       </div>
     </div>
-
-
-
   </header>
+
   <main class="container">
     <h1>¡Bienvenido a Freaky Store!</h1>
     <p>Descubre un universo de posibilidades en el que cada carta cuenta una historia. Ya seas un coleccionista experto o un
     jugador casual, en <span>Freaky Store</span> encontrarás todo lo que necesitas para expandir tu colección y dominar el
     juego.</p>
-    <section class="d-grid justify-content-center m-2">
-      <div class="row gap-2 ">
-        <div class="card col-md-5 col-12">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+    <section class="container m-2">
+      <div class="row justify-content-center gap-3">
+        <div class="col-md-3 col-12">
+          <div class="card">
+            <img src="./imagenes/foto1.jpg" class="card-img-top" alt="venasour">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text...</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
         </div>
-        <div class="card col-md-5 col-12">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        <div class="col-md-3 col-12">
+          <div class="card">
+            <img src="./imagenes/foto2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text...</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
         </div>
-        <div class="card col-md-5 col-12">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        <div class="col-md-3 col-12">
+          <div class="card">
+            <img src="./imagenes/foto3.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text...</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
         </div>
       </div>
-
     </section>
+
 
 
 
