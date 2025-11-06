@@ -1,0 +1,14 @@
+// ============================
+// LAYOUT: FOOTER
+// ============================
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+
+  p {
+    color: var(--text-dark); // Asegura que el color se aplique
+    margin-bottom: 0; // Quita el margen de párrafo
+  }
+}

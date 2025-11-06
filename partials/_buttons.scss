@@ -1,0 +1,27 @@
+// ============================
+// COMPONENTE: BOTÓN
+// ============================
+
+// Estilo de botón principal (usado en index.html y contacto.html)
+.btn-primary-custom,
+.btn-add {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  transition: background 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background: var(--primary);
+    color: var(--text-light);
+  }
+
+  &:active {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
+}
