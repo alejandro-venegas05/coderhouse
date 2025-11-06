@@ -1,9 +1,11 @@
+@charset "UTF-8";
 :root {
   /* Fuentes */
   --font-family: "Roboto", sans-serif;
   --font-size-base: 16px;
   /* Paleta de Colores */
   --bg-dark: #121212;
+  --bg-dark-gradient: #1a1a2e;
   --bg-card-dark: #1E1E1E;
   --primary: #6366F1;
   --primary-hover: #4F46E5;
@@ -32,7 +34,9 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.5;
   color: var(--text-light);
-  background-color: var(--bg-dark);
+  background: linear-gradient(270deg, var(--bg-dark), var(--bg-dark-gradient), var(--bg-dark));
+  background-size: 600% 600%;
+  animation: gradientFlow 16s ease infinite;
 }
 
 main {
@@ -46,6 +50,8 @@ main h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
+  animation: fadeInDown 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
 }
 main h2 {
   font-size: 1.5rem;
@@ -75,6 +81,38 @@ main ul li {
   margin-bottom: 0.5rem;
 }
 
+/*
+ * Animación de entrada: Fade In (Aparecer) + Translate Y (Subir)
+ * La usaremos para los H1 de las páginas
+ */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.col-12,
+.col-sm-6,
+.col-md-4,
+.col-lg-3 {
+  perspective: 1000px;
+}
+
 .product-card {
   width: 100%;
   border: 1px solid var(--border-color);
@@ -82,12 +120,12 @@ main ul li {
   border-radius: 0.5rem;
   overflow: hidden;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.4s ease-out;
   will-change: transform, box-shadow;
 }
 .product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03) rotateY(-8deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
   border-color: var(--primary);
 }
 .product-card .product-img {
@@ -107,11 +145,22 @@ main ul li {
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: var(--text-light);
+  transition: all 0.3s ease-out 0.1s;
 }
-.product-card .product-desc {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
+.product-card .product-desc,
+.product-card .btn-primary-custom,
+.product-card .btn-add {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.3s ease-out;
+}
+.product-card:hover .product-desc, .product-card:hover .btn-primary-custom, .product-card:hover .btn-add {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+.product-card:hover .product-title {
+  transform: translateY(-5px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -141,6 +190,84 @@ main ul li {
 .btn-add:active {
   background: var(--primary-hover);
   border-color: var(--primary-hover);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.pagination .page-item.disabled .page-link {
+  background-color: var(--bg-card-dark);
+  border-color: var(--border-color);
+  color: var(--text-dark);
+}
+.pagination .page-link {
+  background-color: var(--bg-card-dark);
+  border: 1px solid var(--border-color);
+  color: var(--text-light);
+}
+.pagination .page-link:hover {
+  background-color: var(--primary-hover);
+  color: var(--text-light);
+  border-color: var(--primary-hover);
+}
+.pagination .page-link:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--primary), 0.5);
+}
+
+.form-control {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-control:focus {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+}
+.form-control::placeholder {
+  color: var(--text-dark);
+  opacity: 0.7;
+}
+
+header .navbar-collapse ul li a {
+  color: var(--text-dark);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+header .navbar-collapse ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+header .navbar-collapse ul li a:hover {
+  color: var(--text-light);
+}
+header .navbar-collapse ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+header .navbar-dark .col-lg-3 a.d-flex {
+  transition: color 0.3s ease;
+}
+header .navbar-dark .col-lg-3 a.d-flex .material-symbols-outlined {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+header .navbar-dark .col-lg-3 a.d-flex:hover {
+  color: var(--primary) !important;
+}
+header .navbar-dark .col-lg-3 a.d-flex:hover .material-symbols-outlined {
+  transform: rotateZ(-15deg) scale(1.1);
 }
 
 footer {

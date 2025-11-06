@@ -1,0 +1,55 @@
+
+header {
+
+
+  .navbar-collapse ul li a {
+    color: var(--text-dark);
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+
+    // El subrayado (pseudo-elemento ::after)
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+
+
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease-out;
+    }
+
+
+    &:hover {
+      color: var(--text-light);
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+    .navbar-dark .col-lg-3 a.d-flex {
+      transition: color 0.3s ease;
+
+      // El ícono de cartas
+      .material-symbols-outlined {
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); // Curva "Overshoot"
+      }
+
+      // Al pasar el mouse
+      &:hover {
+        color: var(--primary) !important; // Iluminamos el texto
+
+        .material-symbols-outlined {
+          transform: rotateZ(-15deg) scale(1.1); // Rota y "rebota"
+        }
+      }
+    }
+}

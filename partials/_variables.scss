@@ -1,6 +1,4 @@
-// ============================
-// VARIABLES CSS (CUSTOM PROPERTIES)
-// ============================
+
 :root {
   /* Fuentes */
   --font-family: "Roboto", sans-serif;
@@ -8,6 +6,7 @@
 
   /* Paleta de Colores */
   --bg-dark: #121212;
+  --bg-dark-gradient: #1a1a2e;
   --bg-card-dark: #1E1E1E;
   --primary: #6366F1;
   --primary-hover: #4F46E5;
@@ -15,6 +14,7 @@
   --text-dark: #D1D5DB;
   --border-color: rgba(255, 255, 255, 0.12);
 }
+
 
 /* Opcional: tema claro */
 .theme-light {

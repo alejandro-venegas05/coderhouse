@@ -1,17 +1,18 @@
-// ============================
-// IMPORTACIÓN DE PARCIALES SASS (con @use)
-// ============================
-
 // 1. Variables (colores, fuentes)
 @use 'partials/variables';
 
 // 2. Base (reset, estilos de body)
 @use 'partials/base';
 
-// 3. Componentes (tarjetas, botones, etc.)
+// 3. Animaciones (Keyframes)
+@use 'partials/animations'; // <-- ¡AÑADE ESTA LÍNEA!
+
+// 4. Componentes (tarjetas, botones, etc.)
 @use 'partials/cards';
 @use 'partials/buttons';
+@use 'partials/pagination';
+@use 'partials/forms';
 
-// 4. Layout (footer)
+// 5. Layout (footer)
+@use 'partials/header';
 @use 'partials/footer';
-

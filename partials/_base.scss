@@ -9,12 +9,19 @@
 
 html,
 body {
-
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: 1.5;
   color: var(--text-light);
-  background-color: var(--bg-dark);
+
+
+  background: linear-gradient(270deg,
+      var(--bg-dark),
+      var(--bg-dark-gradient),
+      var(--bg-dark));
+  background-size: 600% 600%;
+  animation: gradientFlow 16s ease infinite;
+
 }
 // Estilos de texto globales
 main {
@@ -29,6 +36,8 @@ main {
     font-size: 2rem;
     margin-bottom: 1rem;
     text-align: center;
+    animation: fadeInDown 0.8s ease-out 0.2s;
+    animation-fill-mode: both;
   }
 
   h2 {

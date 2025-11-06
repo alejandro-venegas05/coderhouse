@@ -1,20 +1,25 @@
-// ============================
-// COMPONENTE: TARJETA DE PRODUCTO
-// ============================
+
+.col-12,
+.col-sm-6,
+.col-md-4,
+.col-lg-3 {
+  perspective: 1000px;
+}
+
 .product-card {
-  width: 100%; // Dejamos que el grid de Bootstrap controle el ancho
+  width: 100%;
   border: 1px solid var(--border-color);
   background: var(--bg-card-dark);
   border-radius: 0.5rem;
   overflow: hidden;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.4s ease-out;
   will-change: transform, box-shadow;
 
-  // Hover: crecimiento suave
+  // ESTADO HOVER (Tarjeta)
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03) rotateY(-8deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
     border-color: var(--primary);
   }
 
@@ -38,12 +43,34 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: var(--text-light);
+    // Agregamos transición para que no "salte" si lo movemos
+    transition: all 0.3s ease-out 0.1s;
   }
 
-  .product-desc {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
+  // === ¡AQUÍ LA MAGIA! ===
+
+  // 1. Estado inicial de la descripción y el botón
+  .product-desc,
+  .btn-primary-custom,
+  .btn-add {
+    opacity: 0; // Ocultos por defecto
+    transform: translateY(15px); // Ligeramente abajo
+    transition: all 0.3s ease-out;
+  }
+
+  // 2. Estado hover de la descripción y el botón
+  &:hover .product-desc,
+  &:hover .btn-primary-custom,
+  &:hover .btn-add {
+    opacity: 1; // Se muestran
+    transform: translateY(0); // Vuelven a su posición
+    // El retraso es la clave:
+    transition-delay: 0.15s; // Espera 150ms antes de animarse
+  }
+
+  // 3. Ajuste para el título en hover (opcional, pero da espacio)
+  &:hover .product-title {
+    transform: translateY(-5px);
   }
 }
 
