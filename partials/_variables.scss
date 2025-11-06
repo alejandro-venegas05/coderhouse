@@ -1,13 +1,12 @@
 // ============================
-// VARIABLES SASS
-// ============================
-$font-family: "Roboto", sans-serif;
-$font-size-base: 16px;
-
-// ============================
 // VARIABLES CSS (CUSTOM PROPERTIES)
 // ============================
 :root {
+  /* Fuentes */
+  --font-family: "Roboto", sans-serif;
+  --font-size-base: 16px;
+
+  /* Paleta de Colores */
   --bg-dark: #121212;
   --bg-card-dark: #1E1E1E;
   --primary: #6366F1;
